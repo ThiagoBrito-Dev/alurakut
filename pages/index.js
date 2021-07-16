@@ -55,13 +55,7 @@ function ProfileRelationsBox({ title, items }) {
 export default function Home() {
   const gitHubUser = "ThiagoBrito-Dev";
 
-  const [communities, setCommunities] = React.useState([
-    {
-      id: "143652104730452",
-      title: "Eu odeio acordar cedo",
-      image: "https://alurakut.vercel.app/capa-comunidade-01.jpg",
-    },
-  ]);
+  const [communities, setCommunities] = React.useState([]);
 
   const favoritePeople = [
     "juunegreiros",
@@ -74,13 +68,40 @@ export default function Home() {
 
   const [followers, setFollowers] = React.useState([]);
 
-  React.useEffect(function () {
+  React.useEffect(() => {
     fetch("https://api.github.com/users/peas/followers")
-      .then(function (serverResponse) {
+      .then((serverResponse) => {
         return serverResponse.json();
       })
-      .then(function (completeResponse) {
+      .then((completeResponse) => {
         setFollowers(completeResponse);
+      });
+
+    fetch("https://graphql.datocms.com/", {
+      method: "POST",
+      headers: {
+        Authorization: "94d70a3fcebf4369ae25f6be0d868a",
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: `query {
+        allCommunities {
+          id
+          title
+          imageUrl
+          creatorSlug
+        }
+      }`,
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((completeResponse) => {
+        const datoCommunities = completeResponse.data.allCommunities;
+
+        setCommunities(datoCommunities);
       });
   }, []);
 
@@ -89,7 +110,7 @@ export default function Home() {
       <AlurakutMenu gitHubUser={gitHubUser} />
       <MainGrid>
         <div className="profileArea" style={{ gridArea: "profileArea" }}>
-          <ProfileSidebar githubUser={gitHubUser} />
+          <ProfileSidebar gitHubUser={gitHubUser} />
         </div>
 
         <div className="welcomeArea" style={{ gridArea: "welcomeArea" }}>
@@ -107,12 +128,24 @@ export default function Home() {
                 const formData = new FormData(event.target);
 
                 const community = {
-                  id: new Date().toISOString(),
                   title: formData.get("title"),
-                  image: formData.get("image"),
+                  imageUrl: formData.get("image"),
+                  creatorSlug: gitHubUser,
                 };
-                const updatedCommunities = [...communities, community];
-                setCommunities(updatedCommunities);
+
+                fetch("api/communities", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(community),
+                }).then(async (response) => {
+                  const data = await response.json();
+                  const community = data.record;
+                  const updatedCommunities = [...communities, community];
+
+                  setCommunities(updatedCommunities);
+                });
               }}
             >
               <div>
@@ -147,8 +180,8 @@ export default function Home() {
               {communities.map((community) => {
                 return (
                   <li key={community.id}>
-                    <a href={`/users/${community.title}`}>
-                      <img src={community.image} />
+                    <a href={`/communities/${community.id}`}>
+                      <img src={community.imageUrl} />
                       <span>{community.title}</span>
                     </a>
                   </li>
