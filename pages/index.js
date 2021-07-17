@@ -1,4 +1,6 @@
 import React from "react";
+import nookies from "nookies";
+import jwt from "jsonwebtoken";
 
 import MainGrid from "../src/components/MainGrid";
 import Box from "../src/components/Box";
@@ -52,8 +54,8 @@ function ProfileRelationsBox({ title, items }) {
   );
 }
 
-export default function Home() {
-  const gitHubUser = "ThiagoBrito-Dev";
+export default function Home(props) {
+  const gitHubUser = props.gitHubUser;
 
   const [communities, setCommunities] = React.useState([]);
 
@@ -211,4 +213,35 @@ export default function Home() {
       </MainGrid>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const cookies = nookies.get(context);
+  const token = cookies.USER_TOKEN;
+
+  const { isAuthenticated } = await fetch(
+    "https://alurakut.vercel.app/api/auth",
+    {
+      headers: {
+        Authorization: token,
+      },
+    }
+  ).then((response) => response.json());
+
+  if (!isAuthenticated) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  const { githubUser } = jwt.decode(token);
+
+  return {
+    props: {
+      gitHubUser: githubUser,
+    },
+  };
 }
