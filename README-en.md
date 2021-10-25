@@ -13,9 +13,9 @@
   </div>
 
   <div>
-    <img src="https://img.shields.io/github/license/ThiagoBrito-Dev/Podcastr?color=308bc5&style=for-the-badge" />
-    <img src="https://img.shields.io/static/v1?label=version&message=1.0.0&color=308bc5&style=for-the-badge" />
-    <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=308bc5&style=for-the-badge" />
+    <img src="https://img.shields.io/github/license/ThiagoBrito-Dev/Podcastr?color=d81d99&style=for-the-badge" />
+    <img src="https://img.shields.io/static/v1?label=version&message=1.0.0&color=d81d99&style=for-the-badge" />
+    <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=d81d99&style=for-the-badge" />
   </div>
 </div>
 
@@ -41,7 +41,7 @@
 
 Hey Dev, before starting your tests and / or contributions in the application, it is necessary to have two things installed, the first one is our wonderful GIT and the second, the [Node.js](https://nodejs.org/en/), in addition, of course, to a good text editor.
 
-Well, with everything installed and ready, we can proceed to the step-by-step of how to run the application.
+Well, with everything installed and ready, we can proceed to the step by step of how to run the application.
 
 ### 🕹️ Running the application
 
