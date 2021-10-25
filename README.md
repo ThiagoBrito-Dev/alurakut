@@ -17,9 +17,9 @@
   </p>
 
   <div>
-    <img src="https://img.shields.io/github/license/ThiagoBrito-Dev/Podcastr?color=8d5afd&style=for-the-badge" />
-    <img src="https://img.shields.io/static/v1?label=version&message=1.0.0&color=8d5afd&style=for-the-badge" />
-    <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=8d5afd&style=for-the-badge" />
+    <img src="https://img.shields.io/github/license/ThiagoBrito-Dev/Podcastr?color=308bc5&style=for-the-badge" />
+    <img src="https://img.shields.io/static/v1?label=version&message=1.0.0&color=308bc5&style=for-the-badge" />
+    <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=308bc5&style=for-the-badge" />
   </div>
 </div>
 
@@ -36,14 +36,14 @@
 ### 🏆 Features
 
 - [x] Exibir, de acordo com o usuário do GitHub informado na página de login, as informações de perfil do usuário;
-- [x] Criar e salvar novas comunidades; e
+- [x] Criar novas comunidades; e
 - [x] Listar comunidades existentes.
 
 <hr>
 
 ### ❗️ Pré-requisitos
 
-Fala Dev, beleza? Antes de iniciar seus testes e/ou contribuições na aplicação, é necessário ter o nosso maravilhoso [GIT](https://git-scm.com) instalado, bem como, um bom editor de texto.
+Fala Dev, beleza? Antes de iniciar seus testes e/ou contribuições na aplicação, é necessário ter duas coisas instaladas, a primeira é o nosso maravilhoso [GIT](https://git-scm.com) e a segunda, o [Node.js](https://nodejs.org), além, é claro, de um bom editor de texto.
 
 Bom, com tudo instalado e pronto, podemos ir para o passo a passo de como rodar a aplicação.
 
