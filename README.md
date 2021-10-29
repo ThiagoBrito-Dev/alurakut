@@ -17,7 +17,7 @@
   </p>
 
   <div>
-    <img src="https://img.shields.io/github/license/ThiagoBrito-Dev/Podcastr?color=d81d99&style=for-the-badge" />
+    <img src="https://img.shields.io/github/license/trybrito/Podcastr?color=d81d99&style=for-the-badge" />
     <img src="https://img.shields.io/static/v1?label=version&message=1.0.0&color=d81d99&style=for-the-badge" />
     <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=d81d99&style=for-the-badge" />
   </div>
@@ -51,7 +51,7 @@ Bom, com tudo instalado e pronto, podemos ir para o passo a passo de como rodar 
 
 ```bash
 # Primeiramente, clone este repositório com o GIT
-$ git clone <https://github.com/ThiagoBrito-Dev/alurakut>
+$ git clone <https://github.com/trybrito/alurakut>
 
 # Acesse a pasta do projeto pelo terminal de comando
 $ cd .../alurakut
@@ -83,7 +83,7 @@ $ yarn dev
 ### 👨🏽‍🎓 Autor
 
 <div align="center">
-  <img src="https://github.com/ThiagoBrito-Dev.png" width="250px" />
+  <img src="https://github.com/trybrito.png" width="250px" />
 
   <br />
 
@@ -109,7 +109,7 @@ $ yarn dev
 ### 📚 README versions
 
 <div>
-  <a href="https://github.com/ThiagoBrito-Dev/alurakut/blob/main/README.md">Portuguese (pt-br)</a>
+  <a href="https://github.com/trybrito/alurakut/blob/main/README.md">Portuguese (pt-br)</a>
   |
-  <a href="https://github.com/ThiagoBrito-Dev/alurakut/blob/main/README-en.md">English (en-us)</a>
+  <a href="https://github.com/trybrito/alurakut/blob/main/README-en.md">English (en-us)</a>
 </div>
